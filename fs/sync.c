@@ -160,6 +160,8 @@ SYSCALL_DEFINE1(syncfs, int, fd)
 	struct fd f = fdget(fd);
 	struct super_block *sb;
 	int ret;
+	if (!fsync_enabled)
+		return 0;
 
 	if (!fsync_enabled)
 		return 0;
@@ -189,6 +191,9 @@ SYSCALL_DEFINE1(syncfs, int, fd)
  */
 int vfs_fsync_range(struct file *file, loff_t start, loff_t end, int datasync)
 {
+	if (!fsync_enabled)
+		return 0;
+
 	struct inode *inode = file->f_mapping->host;
 #ifdef CONFIG_HISI_PAGECACHE_DEBUG
 	int ret;
@@ -231,7 +236,6 @@ int vfs_fsync(struct file *file, int datasync)
 {
 	if (!fsync_enabled)
 		return 0;
-		
 	return vfs_fsync_range(file, 0, LLONG_MAX, datasync);
 }
 EXPORT_SYMBOL(vfs_fsync);
@@ -264,7 +268,7 @@ SYSCALL_DEFINE1(fdatasync, unsigned int, fd)
 {
 	if (!fsync_enabled)
 		return 0;
-		
+
 	return do_fsync(fd, 1);
 }
 
