@@ -9,7 +9,7 @@ red='\033[0;31m'
 nocol='\033[0m'
 
 # Kernel details
-KERNEL_NAME="StockTest"
+KERNEL_NAME="Firefly"
 VERSION="v1"
 DATE=$(date +"%d-%m-%Y-%I-%M")
 DEVICE="Mate9"
