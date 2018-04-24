@@ -4,7 +4,7 @@
 ## AnyKernel setup
 # begin properties
 properties() {
-kernel.string=HyperPlus Kernel by ajituchiha @ xda-developers
+kernel.string=Serenity Kernel by wirmpolter @ xda-developers
 do.devicecheck=0
 do.modules=0
 do.cleanup=1
