@@ -28,8 +28,8 @@ rm -rf net/.Kconfig.swp
 rm -rf arch/x86/kernel/cpu/bugs_64.c
 
 # Export
-export PATH=$PATH:~/aarch64-linux-android-4.9/bin
-export CROSS_COMPILE=aarch64-linux-android-
+export PATH=$PATH:~/gcc-linaro-4.9.4-x86_64_aarch64-linux-gnu/bin
+export CROSS_COMPILE=aarch64-linux-gnu-
 
 # Make kernel
 function make_kernel() {
