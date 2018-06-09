@@ -36,7 +36,7 @@ function make_kernel() {
   echo -e "$cyan***********************************************"
   echo -e "          Initializing defconfig          "
   echo -e "***********************************************$nocol"
-  make ARCH=arm64 O=../out hyperplus_defconfig
+  make ARCH=arm64 O=../out serenity_defconfig
   echo -e "$cyan***********************************************"
   echo -e "             Building kernel          "
   echo -e "***********************************************$nocol"
