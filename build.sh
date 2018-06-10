@@ -10,7 +10,7 @@ nocol='\033[0m'
 
 # Kernel details
 KERNEL_NAME="Firefly"
-VERSION="v1.1"
+VERSION="v1.4"
 DATE=$(date +"%d-%m-%Y-%I-%M")
 DEVICE="Mate9"
 FINAL_ZIP=$KERNEL_NAME-$VERSION-$DATE-$DEVICE.zip
